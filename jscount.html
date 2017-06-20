@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <title>Count</title>
+    <style>
+        #textblok{
+            position: absolute;
+            width: 40%;
+            height: 20%;
+        }
+        
+        #uitkomstblok{
+            position: absolute;
+            border: solid;
+            height: 30%;
+            width: 40%;
+            margin-top: 10%;
+        }
+        
+        #omzetten{
+            position: absolute;
+            margin-top: 25%;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="textblok" oninput="tellkarakters()"></textarea>
+    <div id="uitkomstblok"></div>
+    <button id="omzetten" onclick="omzethoofdletters()">Hoofdletters</button>
+    <script>
+        function tellkarakters() {
+            var text = document.getElementById("textblok").value;
+            var resultaat = text.split(" ");
+            var text1 = resultaat.length;
+            var text2 = text.length;
+            document.getElementById("uitkomstblok").innerHTML = "aantal woorden " + text1 + "<br>aantal karakters " + text2;
+        }
+        
+        function omzethoofdletters() {
+            var textlow = document.getElementById("textblok").value;
+            //function capitalizeFirstLetter(string)
+            //return string.charAt(0).toUpperCase() + string.slice(1);
+            return textlow.charAt(0).toUpperCase() + textlow.slice(1);
+            document.getElementById("uitkomstblok").innerHTML = "<br>" + textlow;
+            // for (var i = 0; i < resultaat.length)
+            
+        }
+    </script>  
+</body>
+</html>
